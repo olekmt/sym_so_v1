@@ -1,8 +1,12 @@
+# klasa, do której naleza metody zwiazane z algorytmem, obliczaniem wartosci oraz wyswietlaniem
+
+
 class FCFS:
     def __init__(self, processes, n):
         self.processes = processes
         self.n = n
 
+    # znajduje czas oczekiwania danych procesow
     def find_waiting_time(self, processes, n):
         service_time = [0]*n
         service_time[0] = 0
@@ -15,6 +19,7 @@ class FCFS:
 
         return processes
 
+    # znajduje czasy przetwarzania dla procesow
     def find_turn_around_time(self, processes, n):
 
         for i in range(0, n):
@@ -22,7 +27,10 @@ class FCFS:
 
         return processes
 
+    # znajduje srednie czasy oczekiwania i przetwarzania, wyswietla dane o procesach
     def find_avg(self, processes, n):
+        processes = sorted(processes, key=lambda x: x[2])
+
         processes = self.find_waiting_time(processes, n)
         processes = self.find_turn_around_time(processes, n)
 

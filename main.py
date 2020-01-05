@@ -12,7 +12,7 @@ def return_n():
     return int(nn)
 
 
-def input_processes(n):
+def input_processes_priority(n):  # TODO: klasa proces, medody input, return, upload from file
     count = 0
 
     while count < n:
@@ -28,7 +28,32 @@ def input_processes(n):
     return processes
 
 
+def input_processes(n):
+    count = 0
+
+    while count < n:
+        print("proces", count)
+        at = input("Podaj czas przybycia procesu: ")
+        bt = input("Podaj czas trwania procesu: ")
+
+        processes.append([int(count), int(bt), int(at), 0, 0, 0])
+
+        count += 1
+
+    return processes
+
+
+b = input("Wybierz algorytm"
+          "\n1 - FCFS"
+          "\n2 - SJF"
+          "\n3 - Round-robin"
+          "\n4 - HRRN"
+          "\ninne - wyjście"
+          "\n")
+
 a = input("wybierz pule procesow O- otwarta lub Z- zamknieta")
+
+
 if a == 'O' or a == 'o':
     n = return_n()
     processes = input_processes(n)
@@ -38,18 +63,10 @@ elif a == 'Z' or a == 'z':
 else:
     exit(0)
 
-b = input("Wybierz algorytm"
-          "\n1 - FCFS"
-          "\n2 - SJF"
-          "\n3 - Round-robin"
-          "\n4 - HRRN"
-          "\ninne - wyjście"
-          "\n")
+
 if b == '1':
-    processes = sorted(processes, key=lambda x: x[2])
     fcfs = FCFS(processes, n)
     fcfs.find_avg(processes, n)
-
 elif b == '2':
     SJF(processes, n)
 elif b == '3':
