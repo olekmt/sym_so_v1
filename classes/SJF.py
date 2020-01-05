@@ -9,9 +9,11 @@ class SJF:
 
         total_wt = 0
         total_tat = 0
-        moment = 0
 
-        for j in range(0, n):
+        moment = 0
+        nn = n
+
+        while True:
             queue = []
 
             for i in range(0, n):
@@ -27,11 +29,17 @@ class SJF:
 
                 proc_done.append([queue[0][0], queue[0][1], queue[0][2], queue[0][3], int(wt), int(tat)])
 
-                for d in range(0, len(queue)):
+                for d in range(0, n):
                     if queue[0][0] == processes[d][0]:
                         processes[d][3] = 1
 
                 moment = moment + queue[0][1]
+                nn = nn - 1
+            else:
+                moment = moment + 1
+
+            if nn == 0:
+                break
 
         print("Processes   Burst Time   Arrival Time     Waiting",
               "Time   Turn-Around Time  Completion Time \n")
