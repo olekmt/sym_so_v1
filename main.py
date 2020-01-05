@@ -57,7 +57,6 @@ a = input("wybierz pule procesow O- otwarta lub Z- zamknieta")
 if a == 'O' or a == 'o':
     n = return_n()
     processes = input_processes(n)
-    print(n)
 elif a == 'Z' or a == 'z':
     exit(0)
 else:
@@ -68,7 +67,8 @@ if b == '1':
     fcfs = FCFS(processes, n)
     fcfs.find_avg(processes, n)
 elif b == '2':
-    SJF(processes, n)
+    sjf = SJF(processes, n)
+    sjf.find_avg(processes, n)
 elif b == '3':
     RR(processes, n)
 elif b == '4':
