@@ -70,7 +70,8 @@ elif b == '2':
     sjf = SJF(processes, n)
     sjf.find_avg(processes, n)
 elif b == '3':
-    RR(processes, n)
+    rr = RR(processes, n)
+    rr.find_avg(processes, n)
 elif b == '4':
     HRRN(processes, n)
 else:
