@@ -73,6 +73,6 @@ elif b == '3':
     rr = RR(processes, n)
     rr.find_avg(processes, n)
 elif b == '4':
-    HRRN(processes, n)
+    hrrn = HRRN(processes, n)
 else:
     exit(0)

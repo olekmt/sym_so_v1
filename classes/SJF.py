@@ -13,7 +13,7 @@ class SJF:
         moment = 0
         nn = n
 
-        while True:
+        while nn != 0:
             queue = []
 
             for i in range(0, n):
@@ -36,9 +36,6 @@ class SJF:
                 nn = nn - 1
             else:
                 moment = moment + 1
-
-            if nn == 0:
-                break
 
         disp = Display(proc_done, n)
         disp.display(proc_done, n)

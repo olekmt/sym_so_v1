@@ -1,10 +1,10 @@
 from classes.display import Display
 
+
 class RR:
     def __init__(self, processes, n):
         self.processes = processes
         self.n = n
-
 
     def find_avg(self, processes, n):
         processes = sorted(processes, key=lambda x: x[2])
@@ -23,7 +23,7 @@ class RR:
             for i in range(0, n):
                 if processes[i][2] <= moment and processes[i][3] == 0:
                     queue.append(processes[i])
-                    processes[i][3] == 2 #flaga że proces dodany do kolejki
+                    processes[i][3] = 2  # flaga że proces dodany do kolejki
 
             if n_q > len(queue):
                 n_q = 0
@@ -32,6 +32,7 @@ class RR:
                 if queue[n_q][1] > q:
                     queue[n_q][1] = queue[n_q][1] - q
                     moment = moment + q
+                    n_q = n_q + 1
                 elif queue[n_q][1] <= q:
                     moment = moment + queue[n_q][1]
                     for d in range(0, n):
@@ -43,10 +44,9 @@ class RR:
                             nn = nn - 1
 
                     del queue[n_q]
+                    n_q = n_q + 2
             else:
                 moment = moment + 1
-
-            n_q = n_q + 1
 
         disp = Display(processes, n)
         disp.display(processes, n)
