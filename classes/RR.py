@@ -10,13 +10,13 @@ class RR:
         processes = sorted(processes, key=lambda x: x[2])
         disp = Display(processes, n)
 
-        moment = 0
-        nn = n
+        moment = 0 # aktualny moment działania algorytmu
+        nn = n # zmienna określająca liczbę procesów do wykonania
 
         q = input("Podaj kwant czasu q")
         q = int(q)
 
-        n_q = 0  # iterator aktualnie przetwarzanego procesu
+        n_q = 0  # indeks aktualnie przetwarzanego procesu
         queue = []
 
         while nn != 0:
