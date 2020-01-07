@@ -1,10 +1,9 @@
 from classes.display import Display
 
 
-class SJF:
+class PBS:
     def __init__(self, processes, n):
-        self.processes = processes
-        self.n = n
+        self.processes[n] = processes[n]
 
     def find_avg(self, processes, n):
         processes = sorted(processes, key=lambda x: x[2])
@@ -21,7 +20,7 @@ class SJF:
                     queue.append(processes[i])
 
             if len(queue) > 0:
-                queue = sorted(queue, key=lambda x: x[1])
+                queue = sorted(queue, key=lambda x: x[6], reverse=True)
 
                 wt = moment - queue[0][2]
                 tat = wt + queue[0][1]
@@ -38,4 +37,4 @@ class SJF:
                 moment = moment + 1
 
         disp = Display(proc_done, n)
-        disp.display(proc_done, n, 0)
+        disp.display(proc_done, n, 1)

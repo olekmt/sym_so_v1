@@ -54,4 +54,4 @@ class RR:
             else:
                 moment = moment + 1
 
-        disp.display(processes, n)
+        disp.display(processes, n, 0)

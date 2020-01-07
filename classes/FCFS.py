@@ -35,4 +35,4 @@ class FCFS:
         processes = self.find_turn_around_time(processes, n)
 
         disp = Display(processes, n)
-        disp.display(processes, n)
+        disp.display(processes, n, 0)
