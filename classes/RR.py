@@ -8,6 +8,7 @@ class RR:
 
     def find_avg(self, processes, n):
         processes = sorted(processes, key=lambda x: x[2])
+        disp = Display(processes, n)
 
         moment = 0
         nn = n
@@ -22,10 +23,16 @@ class RR:
             # procesy które już przyszły trafiają na kolejkę
             for i in range(0, n):
                 if processes[i][2] <= moment and processes[i][3] == 0:
-                    queue.append(processes[i])
+                    pid1 = processes[i][0]
+                    bt1 = processes[i][1]
+                    at1 = processes[i][2]
+                    d1 = processes[i][3]
+                    wt1 = processes[i][4]
+                    tat1 = processes[i][5]
+                    queue.append([pid1, bt1, at1, d1, wt1, tat1])
                     processes[i][3] = 2  # flaga że proces dodany do kolejki
 
-            if n_q > len(queue):
+            if n_q >= len(queue):
                 n_q = 0
 
             if len(queue) > 0:
@@ -44,9 +51,7 @@ class RR:
                             nn = nn - 1
 
                     del queue[n_q]
-                    n_q = n_q + 2
             else:
                 moment = moment + 1
 
-        disp = Display(processes, n)
         disp.display(processes, n)
