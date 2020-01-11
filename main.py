@@ -2,6 +2,7 @@ from classes.FCFS import FCFS
 from classes.SJF import SJF
 from classes.PBS import PBS
 from classes.RR import RR
+from classes.display import Display
 
 processes = []
 n = 0
@@ -20,8 +21,8 @@ def input_processes(n, p):
         at = input("Podaj czas przybycia procesu: ")
         bt = input("Podaj czas trwania procesu: ")
         if p == 1:
-            p = input("Podaj priorytet")
-            processes.append([int(count), int(bt), int(at), int(p), 0, 0])
+            pp = input("Podaj priorytet")
+            processes.append([int(count), int(bt), int(at), int(pp), 0, 0, 0])
         elif p == 0:
             processes.append([int(count), int(bt), int(at), 0, 0, 0])
 
@@ -34,7 +35,7 @@ b = input("Wybierz algorytm"
           "\n1 - FCFS"
           "\n2 - SJF"
           "\n3 - Round-robin"
-          "\n4 - HRRN"
+          "\n4 - priorytetowy z postarzaniem"
           "\ninne - wyjście"
           "\n")
 
