@@ -7,13 +7,13 @@ def get_file_name():
 def read():
     file_name = get_file_name()
 
-    f = open(file_name, "r")
-    if f.mode == "r":
-        f1 = f.readlines()
-    elif f.mode != "r":
-        print("blad wczytywania pliku")
-        return -1
+    with open(file_name) as text_file:
+        p = [line.strip().split() for line in text_file]
 
-    processes = [x.strip() for x in f1]
+    p[0][0] = int(p[0][0])
 
-    return processes
+    for i in range(1, len(p)):
+        for j in range(0, 6):
+            p[i][j] = int(p[i][j])
+
+    return p

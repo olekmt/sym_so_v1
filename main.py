@@ -24,7 +24,7 @@ def input_processes(n, p):
             pp = input("Podaj priorytet")
             processes.append([int(count), int(bt), int(at), int(pp), 0, 0, 0])
         elif p == 0:
-            processes.append([int(count), int(bt), int(at), 0, 0, 0])
+            processes.append([int(count), int(bt), int(at), 0, 0, 0, 0])
 
         count += 1
 
@@ -49,7 +49,11 @@ if a == 'O' or a == 'o':
     elif b == '4':
         processes = input_processes(n, 1)
 elif a == 'Z' or a == 'z':
-    processes = read()
+    p = read()
+    data = p[0]
+    processes = p
+    del processes[0]
+    n = data[0]
 
 else:
     exit(0)
