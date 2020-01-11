@@ -1,4 +1,4 @@
-from classes.display import Display
+from classes.display import *
 
 
 class RR:
@@ -8,7 +8,6 @@ class RR:
 
     def find_avg(self, processes, n):
         processes = sorted(processes, key=lambda x: x[2])
-        disp = Display(processes, n)
 
         moment = 0 # aktualny moment działania algorytmu
         nn = n # zmienna określająca liczbę procesów do wykonania
@@ -54,4 +53,4 @@ class RR:
             else:
                 moment = moment + 1
 
-        disp.display(processes, n, 0)
+        display(processes, n, 0)

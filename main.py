@@ -2,7 +2,7 @@ from classes.FCFS import FCFS
 from classes.SJF import SJF
 from classes.PBS import PBS
 from classes.RR import RR
-from classes.display import Display
+from classes.input import *
 
 processes = []
 n = 0
@@ -49,7 +49,8 @@ if a == 'O' or a == 'o':
     elif b == '4':
         processes = input_processes(n, 1)
 elif a == 'Z' or a == 'z':
-    exit(0)
+    processes = read()
+
 else:
     exit(0)
 

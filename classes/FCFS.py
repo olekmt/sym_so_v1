@@ -1,5 +1,5 @@
 # klasa, do której naleza metody zwiazane z algorytmem, obliczaniem wartosci oraz wyswietlaniem
-from classes.display import Display
+from classes.display import *
 
 class FCFS:
     def __init__(self, processes, n):
@@ -34,5 +34,4 @@ class FCFS:
         processes = self.find_waiting_time(processes, n)
         processes = self.find_turn_around_time(processes, n)
 
-        disp = Display(processes, n)
-        disp.display(processes, n, 0)
+        display(processes, n, 0)

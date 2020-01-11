@@ -1,4 +1,4 @@
-from classes.display import Display
+from classes.display import *
 
 
 class SJF:
@@ -37,5 +37,5 @@ class SJF:
             else:
                 moment = moment + 1
 
-        disp = Display(proc_done, n)
-        disp.display(proc_done, n, 0)
+
+        display(proc_done, n, 0)

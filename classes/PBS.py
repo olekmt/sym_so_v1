@@ -1,4 +1,4 @@
-from classes.display import Display
+from classes.display import *
 
 
 class PBS:
@@ -46,5 +46,4 @@ class PBS:
             else:
                 moment = moment + 1
 
-        disp = Display(proc_done, n)
-        disp.display(proc_done, n, 1)
+        display(proc_done, n, 1)
