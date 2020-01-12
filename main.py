@@ -49,9 +49,9 @@ if a == 'O' or a == 'o':
     elif b == '4':
         processes = input_processes(n, 1)
 elif a == 'Z' or a == 'z':
-    p = read()
-    data = p[0]
-    processes = p
+    p1 = read()
+    data = p1[0]
+    processes = p1
     del processes[0]
     n = data[0]
 

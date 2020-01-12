@@ -8,12 +8,12 @@ def read():
     file_name = get_file_name()
 
     with open(file_name) as text_file:
-        p = [line.strip().split() for line in text_file]
+        p1 = [line.strip().split() for line in text_file]
 
-    p[0][0] = int(p[0][0])
+    p1[0][0] = int(p1[0][0])
 
-    for i in range(1, len(p)):
+    for i in range(1, len(p1)):
         for j in range(0, 6):
-            p[i][j] = int(p[i][j])
+            p1[i][j] = int(p1[i][j])
 
-    return p
+    return p1

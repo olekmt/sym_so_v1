@@ -37,5 +37,7 @@ class SJF:
             else:
                 moment = moment + 1
 
-
         display(proc_done, n, 0)
+        r = input("raport? t/n")
+        if r == "t" or r == "T":
+            raport(processes, n, 0, 0)

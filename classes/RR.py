@@ -54,3 +54,6 @@ class RR:
                 moment = moment + 1
 
         display(processes, n, 0)
+        r = input("raport? t/n")
+        if r == "t" or r == "T":
+            raport(processes, n, 0, q)

@@ -35,3 +35,7 @@ class FCFS:
         processes = self.find_turn_around_time(processes, n)
 
         display(processes, n, 0)
+
+        r = input("raport? t/n")
+        if r == "t" or r == "T":
+            raport(processes, n, 0, 0)
