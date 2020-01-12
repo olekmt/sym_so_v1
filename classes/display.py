@@ -19,12 +19,12 @@ def display(processes, n, p):
         compl_time = processes[i][5] + processes[i][2]
 
         if p == 0:
-            print(" ", processes[i][0], "\t\t\t", processes[i][1], "\t\t\t", processes[i][2],
-                  "\t\t\t\t", processes[i][4], "\t\t\t\t", processes[i][5], "\t\t\t\t ", compl_time)
+            print(" ", processes[i][0], "\t\t", processes[i][1], "\t\t", processes[i][2],
+                  "\t\t", processes[i][4], "\t\t", processes[i][5], "\t\t", compl_time)
         elif p == 1:
-            print(" ", processes[i][0], "\t\t\t", processes[i][1], "\t\t\t", processes[i][2],
-                  "\t\t\t\t", processes[i][6], "\t\t\t", processes[i][4], "\t\t\t\t", processes[i][5],
-                  "\t\t\t\t ", compl_time)
+            print(" ", processes[i][0], "\t\t", processes[i][1], "\t\t", processes[i][2],
+                  "\t\t", processes[i][6], "\t\t", processes[i][4], "\t\t", processes[i][5],
+                  "\t\t", compl_time)
 
     print("Average waiting time = %.5f " % (total_wt / n))
     print("\nAverage turn around time = ", total_tat / n)

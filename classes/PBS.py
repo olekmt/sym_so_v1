@@ -55,7 +55,7 @@ class PBS:
         display(proc_done, n, 1)
         gantt(g, proc_done[-1][2] + proc_done[-1][5])
 
-        r = input("\nreport? 1 for yes, 2 for no")
+        r = input("\nreport? 1 for yes, 2 for no: ")
         while r != "1" and r != "2":
             r = input("Error, choose 1 for yes or 2 for no.")
         if r == "1":

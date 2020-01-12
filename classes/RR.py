@@ -68,7 +68,7 @@ class RR:
         display(processes, n, 0)
         gantt(g, final_moment)
 
-        r = input("report? 1 for yes, 2 for no")
+        r = input("report? 1 for yes, 2 for no: ")
         while r != "1" and r != "2":
             r = input("Error, choose 1 for yes or 2 for no.")
         if r == "1":
