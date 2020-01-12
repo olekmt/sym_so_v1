@@ -1,6 +1,6 @@
 
 def get_file_name():
-    file_name = input("podaj adres pliku")
+    file_name = input("file:")
     return file_name
 
 

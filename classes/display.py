@@ -38,7 +38,7 @@ def raport(processes, n, p, q):
 
     with open(file_name, "w+") as text_file:
         if q != 0:
-            str1 = "quantum time" + q + '\n'
+            str1 = "Time slice" + q + '\n'
             text_file.write(str1)
 
         if p == 0:

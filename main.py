@@ -9,7 +9,7 @@ n = 0
 
 
 def return_n():
-    nn = input("Podaj liczbe procesow: ")
+    nn = input("Number of processes: \n")
     return int(nn)
 
 
@@ -17,11 +17,14 @@ def input_processes(n, p):
     count = 0
 
     while count < n:
-        print("proces", count)
-        at = input("Podaj czas przybycia procesu: ")
-        bt = input("Podaj czas trwania procesu: ")
+        print("Process", count)
+        at = input("Process arrival time: \n")
+        bt = input("Process burst time: \n")
+        while bt == 0:
+            print("Error, burst time=0. Choose burst time greater than 0")
+            bt = input("Process burst time:\n")
         if p == 1:
-            pp = input("Podaj priorytet")
+            pp = input("Process priority\n")
             processes.append([int(count), int(bt), int(at), int(pp), 0, 0, 0])
         elif p == 0:
             processes.append([int(count), int(bt), int(at), 0, 0, 0, 0])
@@ -31,24 +34,30 @@ def input_processes(n, p):
     return processes
 
 
-b = input("Wybierz algorytm"
+b = input("Choose an algorithm"
           "\n1 - FCFS"
           "\n2 - SJF"
           "\n3 - Round-robin"
-          "\n4 - priorytetowy z postarzaniem"
-          "\ninne - wyjście"
+          "\n4 - Priority Based"
+          "\nelse - exit"
           "\n")
+if b != "1" or b != "2" or b != "3" or b != "4":
+    exit(0)
+a = input("1 - read processes from file"
+          "\n2 - get processes from user"
+          "\nelse - exit")
 
-a = input("wybierz pule procesow O- otwarta lub Z- zamknieta")
 
-
-if a == 'O' or a == 'o':
+if a == '2':
     n = return_n()
+    while n == 0:
+        print("Error, n=0. Choose n greater than 0")
+        n = return_n()
     if b == '1' or b == '2' or 'b' == 3:
         processes = input_processes(n, 0)
     elif b == '4':
         processes = input_processes(n, 1)
-elif a == 'Z' or a == 'z':
+elif a == '1':
     p1 = read()
     data = p1[0]
     processes = p1

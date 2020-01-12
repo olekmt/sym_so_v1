@@ -12,7 +12,7 @@ class RR:
         moment = 0 # aktualny moment działania algorytmu
         nn = n # zmienna określająca liczbę procesów do wykonania
 
-        q = input("Podaj kwant czasu q")
+        q = input("Set time slice")
         q = int(q)
 
         n_q = 0  # indeks aktualnie przetwarzanego procesu
@@ -54,6 +54,9 @@ class RR:
                 moment = moment + 1
 
         display(processes, n, 0)
-        r = input("raport? t/n")
-        if r == "t" or r == "T":
+
+        r = input("report? 1 for yes, 2 for no")
+        while r != '1' or r != '2':
+            r = input("Error, choose 1 for yes or 2 for no.")
+        if r == "1":
             raport(processes, n, 0, q)
