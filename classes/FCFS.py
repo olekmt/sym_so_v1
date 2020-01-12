@@ -9,6 +9,9 @@ class FCFS:
     def find_avg(self, processes, n):
         processes = sorted(processes, key=lambda x: x[2])
         proc_done = []
+        g = []
+
+        display(processes, n, 0)
 
         moment = 0
         nn = n
@@ -32,15 +35,21 @@ class FCFS:
                     if queue[0][0] == processes[d][0]:
                         processes[d][3] = 1
 
+                for i in range(0, proc_done[-1][1]):
+                    g.append(proc_done[-1][0])
+
                 moment = moment + queue[0][1]
                 nn = nn - 1
             else:
                 moment = moment + 1
+                g.append("x")
 
         display(proc_done, n, 0)
+        gantt(g, proc_done[-1][2] + proc_done[-1][5])
 
         r = input("report? 1 for yes, 2 for no")
-        while r != "1" or r != "2":
+        while r != "1" and r != "2":
             r = input("Error, choose 1 for yes or 2 for no.")
-        if r == 1:
-            raport(processes, n, 0, 0)
+        if r == "1":
+            g1 = get_str_gantt(g, proc_done[-1][2] + proc_done[-1][5])
+            raport(proc_done, n, 0, 0, g1)

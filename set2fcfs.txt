@@ -1,0 +1,14 @@
+Processes   Burst Time   Arrival Time     Waiting Time   Turn-Around Time  Completion Time
+ 0		3		0		0		3		 3
+ 1		4		0		3		7		 7
+ 2		5		2		5		10		 12
+ 3		2		4		8		10		 14
+ 4		6		5		9		15		 20
+ 5		12		5		15		27		 32
+ 6		3		5		27		30		 35
+ 7		2		8		27		29		 37
+ 8		1		9		28		29		 38
+ 9		5		10		28		33		 43
+Average waiting time = 15.0
+Average turn around time = 19.3
+0|0|0|1|1|1|1|2|2|2|2|2|3|3|4|4|4|4|4|4|5|5|5|5|5|5|5|5|5|5|5|5|6|6|6|7|7|8|9|9|9|9|9|

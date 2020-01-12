@@ -23,14 +23,14 @@ def display(processes, n, p):
                   "\t\t\t\t", processes[i][4], "\t\t\t\t", processes[i][5], "\t\t\t\t ", compl_time)
         elif p == 1:
             print(" ", processes[i][0], "\t\t\t", processes[i][1], "\t\t\t", processes[i][2],
-                  "\t\t\t\t", processes[i][3], "\t\t\t", processes[i][4], "\t\t\t\t", processes[i][5],
+                  "\t\t\t\t", processes[i][6], "\t\t\t", processes[i][4], "\t\t\t\t", processes[i][5],
                   "\t\t\t\t ", compl_time)
 
     print("Average waiting time = %.5f " % (total_wt / n))
     print("\nAverage turn around time = ", total_tat / n)
 
 
-def raport(processes, n, p, q):
+def raport(processes, n, p, q, g1):
     file_name = get_file_name()
 
     total_wt = 0
@@ -38,7 +38,7 @@ def raport(processes, n, p, q):
 
     with open(file_name, "w+") as text_file:
         if q != 0:
-            str1 = "Time slice" + q + '\n'
+            str1 = "Time slice" + str(q) + '\n'
             text_file.write(str1)
 
         if p == 0:
@@ -46,7 +46,7 @@ def raport(processes, n, p, q):
                 "Processes   Burst Time   Arrival Time     Waiting Time   Turn-Around Time  Completion Time\n")
         elif p == 1:
             text_file.write(
-                "Processes   Burst Time   Arrival Time  Priority   Waiting Time   Turn-Around Time  Completion Time\n")
+                "Processes   Burst Time   Arrival Time     Priority     Waiting Time   Turn-Around Time  Completion Time\n")
 
         for i in range(0, n):
             total_wt = total_wt + processes[i][4]
@@ -60,10 +60,12 @@ def raport(processes, n, p, q):
                         processes[i][5]) + "\t\t " + str(compl_time) + "\n"
             elif p == 1:
                 str1 = " " + str(processes[i][0]) + "\t\t" + str(processes[i][1]) + "\t\t" + str(
-                        processes[i][2]) + "\t\t" + str(processes[i][3]) + "\t\t" + str(
+                        processes[i][2]) + "\t\t" + str(processes[i][6]) + "\t\t" + str(
                         processes[i][4]) + "\t\t" + str(processes[i][5]) + "\t\t " + str(compl_time) + "\n"
 
             text_file.write(str1)
 
         text_file.write("Average waiting time = " + str((total_wt / n)))
         text_file.write("\nAverage turn around time = " + str((total_tat / n)))
+        text_file.write("\n")
+        text_file.write(g1)
