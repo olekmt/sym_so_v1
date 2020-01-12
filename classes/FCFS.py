@@ -2,6 +2,7 @@ from classes.display import *
 
 
 class FCFS:
+
     def __init__(self, processes, n):
         self.processes = processes
         self.n = n
@@ -10,8 +11,6 @@ class FCFS:
         processes = sorted(processes, key=lambda x: x[2])
         proc_done = []
         g = []
-
-        display(processes, n, 0)
 
         moment = 0
         nn = n

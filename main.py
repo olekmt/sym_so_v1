@@ -1,7 +1,7 @@
-from classes.FCFS import FCFS
-from classes.SJF import SJF
-from classes.PBS import PBS
-from classes.RR import RR
+from classes.FCFS import *
+from classes.SJF import *
+from classes.PBS import *
+from classes.RR import *
 from classes.input import *
 
 processes = []
