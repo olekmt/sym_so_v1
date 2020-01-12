@@ -49,7 +49,7 @@ class PBS:
         display(proc_done, n, 1)
 
         r = input("report? 1 for yes, 2 for no")
-        while r != '1' or r != '2':
+        while r != "1" or r != "2":
             r = input("Error, choose 1 for yes or 2 for no.")
         if r == "1":
             raport(processes, n, 1, 0)

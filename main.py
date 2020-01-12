@@ -41,23 +41,26 @@ b = input("Choose an algorithm"
           "\n4 - Priority Based"
           "\nelse - exit"
           "\n")
-if b != "1" or b != "2" or b != "3" or b != "4":
+b = int(b)
+
+if b > 4 or b < 0:
     exit(0)
+
 a = input("1 - read processes from file"
           "\n2 - get processes from user"
           "\nelse - exit")
+a = int(a)
 
-
-if a == '2':
+if a == 2:
     n = return_n()
     while n == 0:
         print("Error, n=0. Choose n greater than 0")
         n = return_n()
-    if b == '1' or b == '2' or 'b' == 3:
+    if b >= 1 or b <= 3 :
         processes = input_processes(n, 0)
-    elif b == '4':
+    elif b == 4:
         processes = input_processes(n, 1)
-elif a == '1':
+elif a == 1:
     p1 = read()
     data = p1[0]
     processes = p1
@@ -68,16 +71,16 @@ else:
     exit(0)
 
 
-if b == '1':
+if b == 1:
     fcfs = FCFS(processes, n)
     fcfs.find_avg(processes, n)
-elif b == '2':
+elif b == 2:
     sjf = SJF(processes, n)
     sjf.find_avg(processes, n)
-elif b == '3':
+elif b == 3:
     rr = RR(processes, n)
     rr.find_avg(processes, n)
-elif b == '4':
+elif b == 4:
     pbs = PBS(processes, n)
     pbs.find_avg(processes, n)
 else:
