@@ -19,7 +19,6 @@ class PBS:
 
             for i in range(0, n):
                 if processes[i][2] <= moment and processes[i][3] == 0:
-                    print("q")
                     queue.append(processes[i])
 
             if len(queue) > 0:

@@ -22,7 +22,7 @@ def input_processes(n, p):
             bt = input("Process burst time: ")
         if p == 1:
             pp = input("Process priority: ")
-            processes.append([int(count), int(bt), int(at), int(pp), 0, 0, 0])
+            processes.append([int(count), int(bt), int(at), 0, 0, 0, int(pp)])
         elif p == 0:
             processes.append([int(count), int(bt), int(at), 0, 0, 0, 0])
 
